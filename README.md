@@ -6,7 +6,7 @@ https://frontend-test.idalite.com/
 **npm intall**  
 2. Запуск dev-сборки  
 **npm run dev**  
-3. Генерация статических страницы  
+3. Генерация статических страниц  
 **npm run generate**  
 4. Запуск продакшн-сборки  
 **npm run build**  
