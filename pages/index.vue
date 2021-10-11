@@ -1,13 +1,13 @@
 <template>
-  <TodoList/>
+  <ProductsList/>
 </template>
 
 <script>
-import TodoList from '~/components/TodoList.vue'
+import ProductsList from '~/components/ProductsList.vue'
 
 export default {
 	components: {
-		TodoList
+		ProductsList
 	}
 }
 </script>
