@@ -3,7 +3,7 @@ https://frontend-test.idalite.com/
 
 Запуск проекта  
 1. Установка зависимостей  
-**npm intall**  
+**npm install**  
 2. Запуск dev-сборки  
 **npm run dev**  
 3. Генерация статических страниц  
