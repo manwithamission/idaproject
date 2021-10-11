@@ -7,8 +7,8 @@
       v-on:input="onChange"
       v-model="val.value"
       v-if="isMulti"
-      :type="type"
       class="input multi"
+      :type="type"
       :placeholder="placeholder"
     />
     <input
@@ -16,10 +16,12 @@
       v-model="val.value"
       v-else
       :type="type"
-      :class="{input: true, 'error': val.isError}"
+      :class="{ input: true, error: val.isError }"
       :placeholder="placeholder"
     />
-    <p :class="{'input-error': true, show: val.isError}">Поле является обязательным</p>
+    <p :class="{ 'input-error': true, show: val.isError }">
+      Поле является обязательным
+    </p>
   </div>
 </template>
 
@@ -74,7 +76,7 @@ export default {
   }
 
   &.error {
-    border: 1px solid #FF8484;
+    border: 1px solid #ff8484;
   }
 }
 .input-name {
@@ -99,7 +101,7 @@ export default {
   font-size: 8px;
   color: #ff8484;
   opacity: 0;
-  
+
   &.show {
     opacity: 1;
   }

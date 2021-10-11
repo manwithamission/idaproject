@@ -1,25 +1,34 @@
 <template>
   <div class="product">
-    <div class="delete-wrap"><div class="delete-icon"></div></div>
+    <div v-on:click="() => onDelete(data.id)" class="delete-wrap">
+      <div class="delete-icon"></div>
+    </div>
     <img :src="data.image" :alt="data.name" class="product-image" />
     <div class="product-info">
       <p class="product-name">{{ data.name }}</p>
       <p class="product-description">{{ data.description }}</p>
-      <p class="product-price">{{ data.price }} руб.</p>
+      <p class="product-price">{{ formattedPrice }} руб.</p>
     </div>
   </div>
 </template>
-
 <script>
+import { formatPrice } from "../utils/utils";
 export default {
   props: {
     data: Object,
+    onDelete: Function,
+  },
+  computed: {
+    formattedPrice() {
+      return formatPrice(this.data.price);
+    },
   },
 };
 </script>
 
 <style lang="less" scoped>
 .product {
+  transition: all 1s;
   background: #fffefb;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
     0px 6px 10px rgba(0, 0, 0, 0.02);
@@ -67,12 +76,15 @@ export default {
   font-size: 20px;
   color: #3f3f3f;
   margin-bottom: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 .product-description {
   font-weight: 400;
   font-size: 16px;
   color: #3f3f3f;
   margin-bottom: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

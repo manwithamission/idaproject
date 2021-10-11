@@ -94,7 +94,7 @@ export default {
       });
     },
     clearForm() {
-      Object.keys(this.formData).map((key) => {
+      Object.keys(this.formData).forEach((key) => {
         this.formData[key] = { isError: false, value: "" };
       });
       this.isFormValid = false;
@@ -112,5 +112,9 @@ export default {
   border-radius: 4px;
   padding: 24px;
   margin-right: 16px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 </style>

@@ -18,6 +18,9 @@
 <script>
 import { sortOptions } from "../utils/contants";
 export default {
+  props: {
+    callback: Function,
+  },
   data: function () {
     return {
       isOpen: false,
@@ -29,6 +32,7 @@ export default {
     onClickOption: function (e, item) {
       this.isOpen = false;
       this.value = item.text || "";
+      this.callback(item.value);
     },
     onSelect: function (e) {
       this.isOpen = !this.isOpen;
@@ -61,6 +65,9 @@ export default {
     background-image: url("~/assets/images/arrow.png");
     width: 15px;
     height: 10px;
+  }
+  @media (max-width: 768px) {
+    width: auto;
   }
 }
 
