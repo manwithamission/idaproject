@@ -55,7 +55,7 @@ export default {
   },
   mounted: function () {
     try {
-      this.products = JSON.parse(localStorage.getItem("products"));
+      this.products = JSON.parse(localStorage.getItem("products")) || [];
       this.loading = false;
     } catch (error) {
       this.products = [];
